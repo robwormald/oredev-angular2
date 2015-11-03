@@ -1,11 +1,20 @@
 import {Injectable} from 'angular2/angular2'
 
+export interface Todo {
+  title: string;
+  completed: boolean;
+}
+
+
 @Injectable()
 export class TodoService {
-  header: string;
-  todos: string[]
+  todos: Todo[];
   constructor(){
-    this.header = "my todo app!"
-    this.todos = ['learn angular2', 'eat lunch']
+   this.todos = [];
   }
+  
+  addTodo(newTodo: Todo){
+    this.todos.push(newTodo);
+  }
+  
 }
