@@ -6,7 +6,9 @@ import {LocationStrategy, HashLocationStrategy} from 'angular2/router';
 
 import {App} from './components/app';
 
+class TodoList {}
+
 bootstrap(App, [
-  provide(LocationStrategy, {useClass: HashLocationStrategy})
+  provide(LocationStrategy, {useClass: HashLocationStrategy}),
 ]);
 

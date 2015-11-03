@@ -7,7 +7,9 @@ import {TodoService, Todo} from '../services/todoService'
 })
 export class TodoDetail {
   todo: Todo;
-  constructor(public routeParams:RouteParams, public todoService:TodoService){
+  constructor(
+    public routeParams:RouteParams,
+    public todoService:TodoService){
   }
   onInit(){
     this.todo = this.todoService.getTodoById(this.routeParams.get('id'));

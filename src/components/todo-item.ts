@@ -1,5 +1,6 @@
-import {Component, FORM_DIRECTIVES} from 'angular2/angular2';
+import {Component, FORM_DIRECTIVES, ViewEncapsulation} from 'angular2/angular2';
 import {ROUTER_DIRECTIVES} from 'angular2/router'
+
 @Component({
   selector: 'todo-item',
   template: `
@@ -10,6 +11,7 @@ import {ROUTER_DIRECTIVES} from 'angular2/router'
     </div>
   `,
   inputs: ['todo'],
-  directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES]
+  directives: [FORM_DIRECTIVES, ROUTER_DIRECTIVES],
+  styleUrls: []
 })
 export class TodoItem {}
