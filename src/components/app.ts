@@ -1,8 +1,10 @@
-import {Component, Inject ,Injectable, CORE_DIRECTIVES, FORM_DIRECTIVES, NgModel} from 'angular2/angular2';
+import {Component, Inject, Injectable, CORE_DIRECTIVES, FORM_DIRECTIVES, NgModel} from 'angular2/angular2';
 import {TodoService} from '../services/todoService';
+import {ROUTER_DIRECTIVES, ROUTER_BINDINGS, Router, RouteConfig, Route} from 'angular2/router'
 
 import {NewTodo} from './new-todo';
-import {TodoItem} from './todo-item';
+import {TodoList} from './todo-list';
+import {TodoDetail} from './todo-detail';
 
 @Component({
   selector: 'todo-app',
@@ -10,16 +12,20 @@ import {TodoItem} from './todo-item';
     <div>
      <h1>My TodoApp </h1>
      <new-todo (created)="addedTodo($event)"></new-todo>
-     <div *ng-for="#todo of todoService.todos">
-       <todo-item [todo]="todo"></todo-item>
-     </div>
+     <router-outlet></router-outlet>
     </div>
   `,
-  providers: [TodoService],
-  directives:[CORE_DIRECTIVES, NewTodo, TodoItem]
+  providers: [ROUTER_BINDINGS, TodoService],
+  directives:[CORE_DIRECTIVES, ROUTER_DIRECTIVES, NewTodo, TodoList]
 })
+@RouteConfig([
+  new Route({path: '/todos', component: TodoList, as: 'Todos'}),
+  new Route({path: '/todos/:id', component: TodoDetail, as: 'TodoDetail'})
+])
 export class App {
-  constructor(public todoService: TodoService){}
+  constructor(public todoService: TodoService, router: Router){
+    router.navigateByUrl('/todos')
+  }
   
   addedTodo(text){
     this.todoService.addTodo({

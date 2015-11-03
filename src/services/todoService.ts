@@ -1,6 +1,7 @@
 import {Injectable} from 'angular2/angular2'
 
 export interface Todo {
+  id?: number;
   title: string;
   completed: boolean;
 }
@@ -17,7 +18,12 @@ export class TodoService {
   }
   
   addTodo(newTodo: Todo){
+    newTodo.id = this.count++;
     this.todos.push(newTodo);
+  }
+  
+  getTodoById(id:any){
+    return this.todos.find(todo => todo.id === parseInt(id, 10));
   }
   
 }
