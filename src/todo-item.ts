@@ -1,13 +1,16 @@
-import {Component} from 'angular2/angular2';
+import {Component, FORM_DIRECTIVES} from 'angular2/angular2';
 
 @Component({
   selector: 'todo-item',
   template: `
     <div>
-      {{todo.title}}: {{todo.completed}}
+      <span>{{todo.title}}</span>
+      <input type="checkbox" [(ng-model)]="todo.completed">
+      <span>{{todo.completed}}</span>
     </div>
   `,
-  inputs: ['todo']
+  inputs: ['todo'],
+  directives: [FORM_DIRECTIVES]
 })
 export class TodoItem {
   constructor(){
