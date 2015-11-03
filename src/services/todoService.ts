@@ -5,10 +5,13 @@ export interface Todo {
   completed: boolean;
 }
 
+class TodoList extends Array {}
 
 @Injectable()
 export class TodoService {
   todos: Todo[];
+  count: number = 0;
+  
   constructor(){
    this.todos = [];
   }

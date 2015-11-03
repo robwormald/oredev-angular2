@@ -12,8 +12,4 @@ import {Component, FORM_DIRECTIVES} from 'angular2/angular2';
   inputs: ['todo'],
   directives: [FORM_DIRECTIVES]
 })
-export class TodoItem {
-  constructor(){
-    console.log('new todo item')
-  }
-}
+export class TodoItem {}

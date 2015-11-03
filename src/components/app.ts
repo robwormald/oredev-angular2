@@ -1,5 +1,6 @@
 import {Component, Inject ,Injectable, CORE_DIRECTIVES, FORM_DIRECTIVES, NgModel} from 'angular2/angular2';
-import {TodoService} from './todoService';
+import {TodoService} from '../services/todoService';
+
 import {NewTodo} from './new-todo';
 import {TodoItem} from './todo-item';
 

@@ -1,5 +1,5 @@
 import {Component} from 'angular2/angular2';
-import {TodoService} from './todoService'
+import {TodoService} from '../services/todoService'
 
 @Component({
   selector: 'nav-bar',

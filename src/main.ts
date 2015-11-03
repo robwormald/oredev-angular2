@@ -3,7 +3,7 @@ import 'zone.js'
 
 import {bootstrap} from 'angular2/angular2'
 
-import {App} from './app';
+import {App} from './components/app';
 
 bootstrap(App);
 
