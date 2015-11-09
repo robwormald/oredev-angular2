@@ -6,7 +6,7 @@ import {Http} from 'angular2/http';
   selector: 'new-todo',
   template: `
     <input type="text" [ng-form-control]="textInput">
-    <button (click)="addTodo(newtodoinput)">add todo</button>
+    <button (click)="addTodo()">add todo</button>
   `,
   directives: [FORM_DIRECTIVES],
   bindings: [Http]
@@ -15,7 +15,8 @@ export class NewTodo {
   textInput = new Control();
   created = new EventEmitter()
   constructor(){
-   this.textInput.valueChanges.toRx()
+   //Obervable demo, observing the textInput's valueChange event
+   (<EventEmitter>this.textInput.valueChanges).toRx()
      .map(v => {
        console.log(v);
        return `http://foo.com/search/${v}`
@@ -23,8 +24,8 @@ export class NewTodo {
      .subscribe(v => console.log(v))
     
   }
-  addTodo(newtodoinput){
-    this.created.next(newtodoinput.value);
-    newtodoinput.value = '';
+  addTodo(){
+    this.created.next(this.textInput.value);
+    this.textInput.value = '';
   }
 }
