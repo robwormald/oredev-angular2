@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "./node_modules/.bin/webpack-dev-server",
+    "serve": "webpack-dev-server --inline --colors --display-error-details --display-cached --port 3000",
     "test": "./node_modules/.bin/karma start"
   },
   "repository": {
     "type": "git"
-     },
+  },
   "author": "jeffbcross, robwormald",
   "license": "Apache 2",
   "devDependencies": {
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@reactivex/rxjs": "^5.0.0-alpha.6",
-    "angular2": "^2.0.0-alpha.44",
+    "angular2": "^2.0.0-alpha.46",
     "reflect-metadata": "^0.1.2",
     "zone.js": "^0.5.8"
   }

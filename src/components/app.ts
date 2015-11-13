@@ -19,8 +19,8 @@ import {TodoDetail} from './todo-detail';
   directives:[CORE_DIRECTIVES, ROUTER_DIRECTIVES, NewTodo, TodoList]
 })
 @RouteConfig([
-  new Route({path: '/todos', component: TodoList, as: 'Todos'}),
-  new Route({path: '/todos/:id', component: TodoDetail, as: 'TodoDetail'})
+  new Route({path: '/todos', component: TodoList, name: 'Todos'}),
+  new Route({path: '/todos/:id', component: TodoDetail, name: 'TodoDetail'})
 ])
 export class App {
   constructor(public todoService: TodoService, router: Router){

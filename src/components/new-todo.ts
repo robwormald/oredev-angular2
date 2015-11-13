@@ -15,8 +15,7 @@ export class NewTodo {
   textInput = new Control();
   created = new EventEmitter()
   constructor(){
-   //Obervable demo, observing the textInput's valueChange event
-   (<EventEmitter>this.textInput.valueChanges).toRx()
+    this.textInput.valueChanges
      .map(v => {
        console.log(v);
        return `http://foo.com/search/${v}`
