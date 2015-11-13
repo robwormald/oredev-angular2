@@ -7,8 +7,7 @@ module.exports = {
   },
 
   plugins: [
-    new LiveReloadPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new LiveReloadPlugin()
   ],
 
   entry: './src/main.ts',
@@ -27,8 +26,8 @@ module.exports = {
         loader: 'ts-loader'
       },
       {
-        test: /\.scss$/,
-        loader: 'sass-loader'
+        test: /\.css$/,
+        loader: 'style-loader'
       }
     ]
   },
