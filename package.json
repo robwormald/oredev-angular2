@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --colors --display-error-details --display-cached --port 3000",
+    "start": "webpack-dev-server --inline --colors --display-error-details --display-cached --port 8080",
     "test": "./node_modules/.bin/karma start"
   },
   "repository": {
